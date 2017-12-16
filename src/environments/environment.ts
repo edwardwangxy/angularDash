@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  logo_url: 'assets/logo_white.png',
+  logo_url_inverse: 'assets/logo.png',
+  auth_url: 'http://demo6840991.mockable.io/',
+  resetPassword_url: 'http://localhost:5723/api/user/test.php',
+  unique_check: 'http://demo6840991.mockable.io/'
 };

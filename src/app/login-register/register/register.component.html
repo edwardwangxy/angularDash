@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+      <div *ngIf="invalidRegi" class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+          Register Fail! Please Check all the field and retry!
+      </div>
+    <div class="form_bg">
+      <form [formGroup]="regiForm" (ngSubmit)="register(regiForm)">
+        <div class="text-center">
+          <img class="logo-image" [src]="logoUrl"/>
+        </div>
+        <h2 class="text-center">Register</h2>
+        <br/>
+          <div class="form-group">
+              <label for="userid">username: <span class="input-label-errspan" #usernameErr></span></label>
+              <input (focusout)="usernameFocusOut(username,usernameErr)" name="username" formControlName="username" type="text" class="form-control" id="userid" placeholder="">
+              <span *ngIf="username.touched && username.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+          </div>
+          <div class="form-group">
+              <label for="pwd">password: <span class="input-label-errspan" #passwordErr></span></label>
+              <input (focusout)="focusoutCheck(password,passwordErr)" name="password" formControlName="password" type="password" class="form-control" id="pwd" placeholder="">
+              <span *ngIf="password.touched && password.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+          </div>
+          <div class="form-group">
+              <label for="repass">*re-enter password: <span class="input-label-errspan" #rePassErr></span></label>
+              <input type="password" (focusout)="rePassCheck(repass,rePassErr,password)" formControlName="repass" name="repass" class="form-control" id="repass" placeholder="">
+              <span *ngIf="repass.touched && repass.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+          </div>
+          <div class="form-group">
+              <label for="email">*E-mail: <span class="input-label-errspan" #emailErr></span></label>
+              <input (focusout)="emailFocusOut(email,emailErr)" name="email" formControlName="email" type="email" class="form-control" id="email" placeholder="">
+              <span *ngIf="email.touched && email.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+          </div>
+          <br/>
+          <div class="align-center">
+              <button [disabled]="regiForm.invalid || (password.value!==repass.value)" type="submit" class="btn btn-primary" id="tea-login" style="width:100%">Register</button>
+          </div>
+
+        <div class="bottom-link text-center">
+          <a routerLink="/login" style="color:whitesmoke;">Login</a>
+          <br>
+          <a routerLink="/forget" style="color:whitesmoke;">Forget Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

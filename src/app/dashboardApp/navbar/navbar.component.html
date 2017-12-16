@@ -1,0 +1,26 @@
+<div #sidebarHeader class="sidebar-header text-center" (click)="navBarToggle(sidebarHeader)">
+  <img class="logo-image" [src]="logoUrl"/>
+</div>
+<nav id="sidebar" *ngIf="navBarDisplay">
+  <!-- Sidebar Header -->
+  <!-- Sidebar Links -->
+  <ul class="list-unstyled components">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a  routerLink="/dashboard" >Home</a></li>
+    <li routerLinkActive="active"><a  routerLink="/dashboard/profile">Profile</a></li>
+    <li routerLinkActive="active"><a  routerLink="/dashboard/mail">Internal Mail</a></li>
+    <li routerLinkActive="active"><a  routerLink="/dashboard/friends">Friends</a></li>
+    <li><!-- Link with dropdown items -->
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">As Student<i class="fa fa-bars"></i></a>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li routerLinkActive="active"><a  routerLink="/dashboard/joinclass"><span class="fa fa-plus"></span> Join Class</a></li>
+      </ul>
+    </li>
+    <li><!-- Link with dropdown items -->
+      <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false">As Professor<i class="fa fa-bars"></i></a>
+      <ul class="collapse list-unstyled" id="homeSubmenu2">
+        <li routerLinkActive="active"><a  routerLink="/dashboard/addclass"><span class="fa fa-plus"></span> Create Class</a></li>
+      </ul>
+    </li>
+    <li><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>

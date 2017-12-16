@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="invalidCode" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Fail Adding A Class!
+    </div>
+    <div *ngIf="validCode" class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Add Success!
+    </div>
+    <div class="form_bg">
+      <form [formGroup]="addClassForm" (ngSubmit)="joinClass()">
+        <h2 class="text-center">Join New Class</h2>
+        <br/>
+        <div class="form-group">
+          <label for="classcode">New Class Code: <span class="input-label-errspan" #classCodeErr></span></label>
+          <input (focusout)="focusoutCheck(classcode,classCodeErr)" name="classcode" formControlName="classcode" type="text" class="form-control" id="classcode" placeholder="">
+          <span *ngIf="classcode.touched && classcode.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <br/>
+        <div class="align-center">
+          <button [disabled]="addClassForm.invalid" type="submit" class="btn btn-primary" id="addClass" style="width:100%">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

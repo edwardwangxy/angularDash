@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="invalidEmail" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Reset Fail!
+    </div>
+    <div *ngIf="resetSuccess" class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Reset Email have been sent!
+    </div>
+    <div class="form_bg">
+      <form [formGroup]="forgetForm" (ngSubmit)="forget(forgetForm)">
+        <div class="text-center">
+          <img class="logo-image" [src]="logoUrl"/>
+        </div>
+        <h2 class="text-center">Forget Password</h2>
+        <br/>
+        <div class="form-group">
+          <label for="email">E-mail: <span class="input-label-errspan" #emailErr></span></label>
+          <input (focusout)="focusoutCheck(email,emailErr)" name="email" formControlName="email" type="email" class="form-control" id="email" placeholder="">
+          <span *ngIf="email.touched && email.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <br/>
+        <div class="align-center">
+          <button [disabled]="forgetForm.invalid" type="submit" class="btn btn-primary" id="login" style="width:100%">Reset Password</button>
+        </div>
+        <div class="bottom-link text-center">
+          <a routerLink="/login" style="color:whitesmoke;">Login</a>
+          <br>
+          <a routerLink="/register" style="color:whitesmoke;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="form_bg">
+      <form>
+        <div class="text-center" (click)="returnHome()">
+          <img class="logo-image" [src]="logoUrl"/>
+        </div>
+        <h2 class="text-center">ERROR:<br>{{ error_code }} {{ error_text }}!!</h2>
+        <div *ngIf="err_reason"><p class="text-center" style="color:red">{{ reason_detail }}</p></div>
+      </form>
+    </div>
+  </div>
+</div>

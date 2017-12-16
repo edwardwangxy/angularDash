@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="invalidCode" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Fail Creating A Class!
+    </div>
+    <div *ngIf="validCode" class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Creating A Class Success!
+    </div>
+    <div class="form_bg">
+      <form [formGroup]="addClassForm" (ngSubmit)="createClass(addClassForm)">
+        <h2 class="text-center">Create New Class</h2>
+        <br/>
+        <div class="form-group">
+          <label for="classname">Class Name: <span class="input-label-errspan" #classnameErr></span></label>
+          <input (focusout)="focusoutCheck(classname,classnameErr)" name="classname" formControlName="classname" type="text" class="form-control" id="classname" placeholder="">
+          <span *ngIf="classname.touched && classname.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="numstudent">Number Of Students: <span class="input-label-errspan" #numstudentErr></span></label>
+          <input (focusout)="focusoutCheck(numstudent,numstudentErr)" name="numstudent" formControlName="numstudent" type="number" class="form-control" id="numstudent" placeholder="">
+          <span *ngIf="numstudent.touched && numstudent.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="classDetail">Class Detail: <span class="input-label-errspan" #classDetailErr></span></label>
+          <textarea (focusout)="focusoutCheck(classDetail,classDetailErr)" name="classDetail" formControlName="classDetail" type="text" class="form-control" id="classDetail" placeholder=""></textarea>
+          <span *ngIf="classDetail.touched && classDetail.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <br/>
+        <div class="align-center">
+          <button [disabled]="addClassForm.invalid" type="submit" class="btn btn-primary" id="addClass" style="width:100%">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

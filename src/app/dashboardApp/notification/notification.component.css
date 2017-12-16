@@ -1,0 +1,88 @@
+.label-as-badge {
+    border-radius: 1em;
+}
+
+.notiTab {
+    background: rgba(69,73,84,1);
+    color:white;
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left:30px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.notiTab:hover {
+    transform: scale(1.05);
+}
+
+.notiTab:active {
+    transform: scale(0.95);
+}
+
+.notiLabel {
+    margin-left:-6px;
+    margin-top: 7px;
+}
+
+.notiSet {
+    position: absolute;
+    z-index:200;
+    right: 80px;
+    margin-top: 20px;
+}
+
+.notiBadge {
+    position: absolute;
+    z-index:202;
+    margin-top: -26px;
+    margin-left: 5px;
+}
+
+#noti-box {
+    width: 170px;
+    height: 200px;
+    border-radius: 5px;
+    background: rgba(69,73,84,1);
+    z-index:200;
+    margin-top: 60px;
+    margin-left: 20px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 1px;
+    color: white;
+    position: absolute;
+    right: 55px;
+}
+
+.notiBoxBody {
+    width: 160px;
+    height: 152px;
+    margin-left: 4px;
+    background: white;
+    border-radius: 2px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+li {
+    font-family: Helvetica;
+    padding: 10px;
+    font-size: 0.9em;
+    display: block;
+    color: rgba(69,73,84,1);
+}
+
+.closeNoti {
+    position: absolute;
+    z-index:202;
+    margin-top: 4px;
+    margin-left: 142px;
+}
+
+.closeNoti:hover {
+    position: absolute;
+    z-index:202;
+    margin-top: 4px;
+    margin-left: 142px;
+    background:white;
+}

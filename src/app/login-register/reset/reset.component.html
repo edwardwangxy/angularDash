@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="invalidReset" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Reset Fail!
+    </div>
+    <div *ngIf="resetSuccess" class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Reset Success!
+    </div>
+    <div class="form_bg">
+      <form [formGroup]="resetForm" (ngSubmit)="resetPassword(resetForm)">
+        <div class="text-center">
+          <img class="logo-image" [src]="logoUrl"/>
+        </div>
+        <h2 class="text-center">Reset Password</h2>
+        <br/>
+        <div class="form-group">
+          <label for="username">*username: <span class="input-label-errspan" #usernameErr></span></label>
+          <input name="username" formControlName="username" type="text" class="form-control" id="username" placeholder="">
+          <span *ngIf="username.touched && username.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">*E-mail: <span class="input-label-errspan" #emailErr></span></label>
+          <input name="email" formControlName="email" type="email" class="form-control" id="email" placeholder="">
+          <span *ngIf="email.touched && email.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">*password: <span class="input-label-errspan" #passwordErr></span></label>
+          <input (focusout)="focusoutCheck(password,passwordErr)" formControlName="password" name="password" type="password" class="form-control" id="password" placeholder="">
+          <span *ngIf="password.touched && password.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="repass">*re-enter password: <span class="input-label-errspan" #rePassErr></span></label>
+          <input type="password" (focusout)="rePassCheck(repass,rePassErr,password)" formControlName="repass" name="repass" class="form-control" id="repass" placeholder="">
+          <span *ngIf="repass.touched && repass.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <br/>
+        <div class="align-center">
+          <button [disabled]="resetForm.invalid || (password.value!==repass.value)" type="submit" class="btn btn-primary" id="tea-login" style="width:100%">Reset Password</button>
+        </div>
+
+        <div class="bottom-link text-center">
+          <a routerLink="/login" style="color:whitesmoke;">Login</a>
+          <br>
+          <a routerLink="/register" style="color:whitesmoke;">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

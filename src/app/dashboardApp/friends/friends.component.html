@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="form_bg">
+      <div class="search">
+        <form [formGroup]="searchForm">
+          <input formControlName="searchFriends" (keyup)="onSearchChange()" type="text" class="searchFriendsBar form-control" placeholder="Search Friends, Filter By Class...">
+        </form>
+
+      </div>
+      <div class="friendsList">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <div class="friendImagePlace">
+              <img src="http://via.placeholder.com/600X600" alt="" class="friendProfileImage">
+              <span class="friendsText">Friends Name</span>
+              <span class="fromClass label label-success">Math Class</span>
+              <span class="floatToRight"><span class="fa fa-envelope"></span><span class="fa fa-comment"></span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.mailSystem {
+    background-color:rgba(107,157,190,1);
+    box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.3);
+    color:whitesmoke;
+    padding-left:10px;
+    padding-right: 10px;
+    border-radius:5px;
+    position: relative;
+    border:0px solid #fff;
+    margin: auto;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 1vw;
+    width: 80vw;
+    height: 90vh;
+}
+
+.mailHeader {
+    color:white;
+    left: 37vw;
+    top: -35px;
+    z-index:50;
+    position: absolute;
+}
+
+.selectClass {
+    color: rgba(69,73,84,1);
+    width: 20vw;
+    height: 40px;
+    background-color: white;
+    border-radius: 3px;
+    margin-top: 60px;
+    margin-left: -15px;
+    padding-top:3px;
+    padding-left: 5px;
+    padding-right: 10px;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.mailList {
+    color: rgba(69,73,84,1);
+    width: 20vw;
+    height: 77vh;
+    background-color: white;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: -15px;
+    margin-bottom: 10px;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.mailList li {
+    font-family: Helvetica;
+    padding: 10px;
+    font-size: 0.9em;
+    display: block;
+    color: rgba(69,73,84,1);
+    height: 80px;
+}
+
+
+.mailDetail {
+    color: rgba(69,73,84,1);
+    width: 58vw;
+    height: 82vh;
+    background-color: white;
+    border-radius: 3px;
+    margin-top: 60px;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.filterButtonSpan {
+    float: right;
+}
+

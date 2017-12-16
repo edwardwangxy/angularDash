@@ -1,0 +1,25 @@
+<div id="notification-set" class="row notiSet">
+  <div id="system-noti" class="col-md-2 notiTab" (click)="notiClick()">
+    <span class="fa fa-bell notiLabel"></span>
+    <span class="label label-danger label-as-badge notiBadge (click)">1</span>
+  </div>
+  <div id="mail-noti" class="col-md-2 notiTab" (click)="mailClick()">
+    <span class="fa fa-envelope notiLabel"></span>
+    <span class="label label-danger label-as-badge notiBadge">2</span>
+  </div>
+  <div id="chat-noti" class="col-md-2 notiTab" (click)="chatClick()">
+    <span class="fa fa-comment notiLabel"></span>
+    <span class="label label-danger label-as-badge notiBadge">300</span>
+  </div>
+</div>
+<div *ngIf="notiBodyDisplay" id="noti-box">
+  <span class="label label-default label-as-badge closeNoti" style="color:rgba(69,73,84,1)" (click)="notiBodyDisplay = false;"><i class="fa fa-times"></i></span>
+  <div class="text-center notiBoxHead"><h4>{{ notiTitle }}</h4></div>
+  <div class="notiBoxBody">
+    <ul class="list-group">
+      <li *ngFor="let each of notiList" class="list-group-item">{{ each.from }}: {{ each.info }}</li>
+    </ul>
+  </div>
+</div>
+
+

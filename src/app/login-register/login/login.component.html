@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="invalidLogin" class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      Login Failed! Username or Password Incorrect!!
+    </div>
+    <div class="form_bg">
+      <form [formGroup]="loginform" (ngSubmit)="login(loginform)">
+        <div class="text-center">
+          <img class="logo-image" [src]="logoUrl"/>
+        </div>
+        <h2 class="text-center">Login Page</h2>
+        <br/>
+        <div class="form-group">
+          <label for="userid">username: <span class="input-label-errspan" #usernameErr></span></label>
+          <input (focusout)="focusoutCheck(username,usernameErr)" name="username" formControlName="username" type="text" class="form-control" id="userid" placeholder="">
+          <span *ngIf="username.touched && username.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <div class="form-group">
+          <label for="pwd">password: <span class="input-label-errspan" #passwordErr></span></label>
+          <input (focusout)="focusoutCheck(password,passwordErr)" name="password" formControlName="password" type="password" class="form-control" id="pwd" placeholder="">
+          <span *ngIf="password.touched && password.invalid" class="input-errspan fa fa-exclamation-circle"></span>
+        </div>
+        <br/>
+        <div class="align-center">
+          <button [disabled]="loginform.invalid" type="submit" class="btn btn-primary" id="login" style="width:100%">Login</button>
+        </div>
+        <div class="bottom-link text-center">
+          <a routerLink="/register" style="color:whitesmoke;">Register</a>
+          <br>
+          <a routerLink="/forget" style="color:whitesmoke;">Forget Password?</a>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+</div>
