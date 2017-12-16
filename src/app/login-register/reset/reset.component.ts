@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import {environment} from '../../../environments/environment';
 import {AuthService} from '../../services/auth.service';
 import {Router, ActivatedRoute} from '@angular/router';
@@ -30,13 +30,13 @@ export class ResetComponent implements OnInit {
   resetForm = new FormGroup({
      username: new FormControl({value: '', disabled: true}, [
          Validators.required,
-    //     SelfDefinedValidators.noSpaces,
+         SelfDefinedValidators.noSpaces,
          Validators.minLength(5),
          Validators.maxLength(30)
      ]),
       email: new FormControl({value: '', disabled: true}, [
           Validators.required,
-  //        SelfDefinedValidators.noSpaces,
+          SelfDefinedValidators.noSpaces,
           Validators.pattern(this.emailPattern)
       ]),
       password: new FormControl('', [
@@ -94,7 +94,7 @@ export class ResetComponent implements OnInit {
       this.router.navigate(['/denied', encodeURI(JSON.stringify(err_obj))]);
   }
 
-  resetPassword(formValue: FormGroup){
+  resetPassword(formValue: AbstractControl){
       const password = formValue.value.password;
       const newpass = this.auth.passwordCrypto(password);
       formValue.value.password = newpass;

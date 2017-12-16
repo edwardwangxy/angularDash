@@ -31,13 +31,13 @@ export class ProfileComponent implements OnInit {
     profilePic: new FormControl(),
     username: new FormControl({value: '', disabled: true}, [
       Validators.required,
- //     SelfDefinedValidators.noSpaces,
+      SelfDefinedValidators.noSpaces,
       Validators.minLength(5),
       Validators.maxLength(30)
     ]),
     email: new FormControl({value: '', disabled: true}, [
       Validators.required,
- //     SelfDefinedValidators.noSpaces,
+      SelfDefinedValidators.noSpaces,
       Validators.pattern(this.emailPattern)
     ]),
     password: new FormControl('', [

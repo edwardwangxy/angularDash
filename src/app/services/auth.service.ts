@@ -4,6 +4,8 @@ import * as CryptoJS from 'crypto-js';
 import {environment} from '../../environments/environment';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import {AuthHttp} from "angular2-jwt";
+import {AbstractControl, ValidationErrors} from "@angular/forms";
 @Injectable()
 export class AuthService {
 

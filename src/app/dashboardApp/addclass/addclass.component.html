@@ -1,12 +1,7 @@
 <div class="container">
   <div class="row">
     <div *ngIf="invalidCode" class="alert alert-danger">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-      Fail Creating A Class!
-    </div>
-    <div *ngIf="validCode" class="alert alert-success">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-      Creating A Class Success!
+      Fail Adding A Class!
     </div>
     <div class="form_bg">
       <form [formGroup]="addClassForm" (ngSubmit)="createClass(addClassForm)">

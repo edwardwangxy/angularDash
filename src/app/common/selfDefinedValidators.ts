@@ -3,7 +3,7 @@ import {AbstractControl, ValidationErrors, FormControl} from "@angular/forms";
 
 export class SelfDefinedValidators {
 
-    static noSpaces(control) : ValidationErrors | null {
+    static noSpaces(control:AbstractControl) : ValidationErrors | null {
         if ((control.value as string).indexOf(" ")>=0){
             return { noSpaces: true };
         }
@@ -11,7 +11,7 @@ export class SelfDefinedValidators {
     }
 
 
-    static rePassCheck(input, err_span: HTMLSpanElement, compareWith: FormControl) {
+    static rePassCheck(input, err_span: HTMLSpanElement, compareWith) {
         this.focusoutCheck(input, err_span);
         if (compareWith.value !== input.value) {
             input.invalid === true;

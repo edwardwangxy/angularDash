@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
     <div *ngIf="invalidReset" class="alert alert-danger">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
       Reset Fail!
     </div>
     <div *ngIf="resetSuccess" class="alert alert-success">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
       Reset Success!
     </div>
     <div class="form_bg">
@@ -16,8 +14,8 @@
         </div>
         <br/>
         <div class="form-group">
-          <label for="profilePic">Upload Profile Picture: <span class="input-label-errspan" #profileErr></span></label>
-          <input (change)="inputFileCheck($event,profileErr)" name="profilePic" formControlName="profilePic" type="file" class="form-control" id="profilePic" accept=".jpg,.jpeg,.png">
+          <label for="profilePic">Upload Picture: <span class="input-label-errspan" #profileErr></span></label>
+          <input (change)="inputFileCheck($event,profileErr)" name="profilePic" formControlName="profilePic" type="file" class="form-control" id="profilePic" accept=".jpg,.jpeg,.png"">
           <span *ngIf="profilePic.touched && profilePic.invalid" class="input-errspan fa fa-exclamation-circle"></span>
         </div>
         <div class="form-group">

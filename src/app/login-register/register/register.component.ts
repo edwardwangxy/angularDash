@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from '../../../environments/environment';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {SelfDefinedValidators} from "../../common/selfDefinedValidators";
 
@@ -26,12 +26,12 @@ export class RegisterComponent implements OnInit {
             Validators.required,
             Validators.minLength(5),
             Validators.maxLength(30),
-           // SelfDefinedValidators.noSpaces
+            SelfDefinedValidators.noSpaces
         ]),
         email: new FormControl('', [
             Validators.required,
             Validators.pattern(this.emailPattern),
-         //   SelfDefinedValidators.noSpaces,
+            SelfDefinedValidators.noSpaces,
         ]),
         password: new FormControl('', [
             Validators.required,
@@ -65,11 +65,11 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
     }
 
-    rePassCheck(input, err_span: HTMLSpanElement, compareWith: FormControl) {
+    rePassCheck(input: AbstractControl, err_span: HTMLSpanElement, compareWith) {
         SelfDefinedValidators.rePassCheck(input, err_span, compareWith);
     }
 
-    usernameFocusOut(input: FormControl, err_span: HTMLSpanElement){
+    usernameFocusOut(input: AbstractControl, err_span: HTMLSpanElement){
         SelfDefinedValidators.focusoutCheck(input, err_span);
         if(input.valid){
             this.auth.uniqueCheck("username", input.value).subscribe(response=>{},error=>{

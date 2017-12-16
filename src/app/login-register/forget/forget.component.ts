@@ -26,7 +26,7 @@ export class ForgetComponent implements OnInit {
   forgetForm = new FormGroup({
     email: new FormControl('', [
       Validators.required,
- //     SelfDefinedValidators.noSpaces,
+      SelfDefinedValidators.noSpaces,
       Validators.pattern(this.emailPattern)
     ]),
   });
