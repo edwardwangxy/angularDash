@@ -1,28 +1,34 @@
 Backend Requirement Document
+
 Login-Register Component:
 (All Passwords has been pre-encrypted)
+
 Login:
 Method: POST;
 Required: {username: string, password: string};
 Response: {token: string (JWT Format)};
+
 Register:
 Method: POST;
 Required: {username: string, password: string, email: string};
 Response: {token: string (JWT Format)};
+
 Forget Password:
 Method: POST;
 Required: {email: string};
 Response: {response: string (200/401/400ﾡﾭ)};
-	Reset Password:
-			Method: POST;
-			Required: {username: string, email: string, password: string, token: string};
-Response: {response: string (200/401/400ﾡﾭ)};
-	Reset Password Token Check:
-Method: GET;
-			Required: Header: Authorization bearer {token: string};
+
+Reset Password:
+Method: POST;
+Required: {username: string, email: string, password: string, token: string};
 Response: {response: string (200/401/400ﾡﾭ)};
 
-	Login Token Check:
+Reset Password Token Check:
 Method: GET;
-			Required: Header: Authorization bearer {token: string};
+Required: Header: Authorization bearer {token: string};
+Response: {response: string (200/401/400ﾡﾭ)};
+
+Login Token Check:
+Method: GET;
+Required: Header: Authorization bearer {token: string};
 Response: {response: string (200/401/400ﾡﾭ)};
