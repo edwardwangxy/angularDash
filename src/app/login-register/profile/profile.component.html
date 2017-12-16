@@ -15,7 +15,7 @@
         <br/>
         <div class="form-group">
           <label for="profilePic">Upload Picture: <span class="input-label-errspan" #profileErr></span></label>
-          <input (change)="inputFileCheck($event,profileErr)" name="profilePic" formControlName="profilePic" type="file" class="form-control" id="profilePic" accept=".jpg,.jpeg,.png"">
+          <input (change)="inputFileCheck($event,profileErr)" name="profilePic" formControlName="profilePic" type="file" class="form-control" id="profilePic" accept=".jpg,.jpeg,.png">
           <span *ngIf="profilePic.touched && profilePic.invalid" class="input-errspan fa fa-exclamation-circle"></span>
         </div>
         <div class="form-group">
