@@ -1,3 +1,9 @@
+## Demo Page:
+[http://uiux.uwwxy.com](http://uiux.uwwxy.com)
+
+## Fake Backend Using: 
+[https://www.mockable.io/](https://www.mockable.io/)
+
 # Lesson
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
