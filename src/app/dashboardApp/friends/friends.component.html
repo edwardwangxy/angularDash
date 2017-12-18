@@ -9,12 +9,15 @@
       </div>
       <div class="friendsList">
         <ul class="list-group">
-          <li class="list-group-item">
+          <li *ngFor="let eachFriend of friendsList" class="list-group-item">
             <div class="friendImagePlace">
-              <img src="http://via.placeholder.com/600X600" alt="" class="friendProfileImage">
-              <span class="friendsText">Friends Name</span>
-              <span class="fromClass label label-success">Math Class</span>
-              <span class="floatToRight"><span class="fa fa-envelope"></span><span class="fa fa-comment"></span></span>
+              <img [src]="eachFriend.profileURL" alt="" class="friendProfileImage">
+              <span class="friendsText">{{ eachFriend.name }}</span>
+              <span class="floatToRight">
+                <span class="fromClass label label-success">{{ eachFriend.fromClass }}</span>
+                <span class="fa fa-envelope"></span>
+                <span class="fa fa-comment" (click)="activeChat(eachFriend)"></span>
+              </span>
             </div>
           </li>
         </ul>

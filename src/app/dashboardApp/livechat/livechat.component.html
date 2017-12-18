@@ -1,24 +1,27 @@
-<div class="livechatwrap">
-  <div class="eachchatComponent" *ngIf="currentChat">
-    <div *ngIf="showTextBody" class="chatBody">
-      <span class="label label-default label-as-badge closeChatBody" style="color:rgba(69,73,84,1)" (click)="closeTextBody()"><i class="fa fa-minus"></i></span>
-      <div class="chatbodyText">
-        <ul class="list-group">
-          <li class="list-group-item"></li>
-        </ul>
+<div class="chatwrap">
+  <div *ngFor="let eachChat of currentChatList" class="livechatwrap">
+    <div  class="eachchatComponent" *ngIf="eachChat.currentChat">
+      <div *ngIf="eachChat.showTextBody" class="chatBody">
+        <span class="label label-default label-as-badge closeChatBody" style="color:rgba(69,73,84,1)" (click)="closeTextBody(eachChat)"><i class="fa fa-minus"></i></span>
+        <div class="chatbodyText">
+          <ul class="list-group">
+            <li class="list-group-item"></li>
+          </ul>
+        </div>
+        <textarea name="chatInput form-control" rows="50" class="chatInput"></textarea>
+        <button class="btn btn-xs btn-default sendButton">
+          send
+        </button>
       </div>
-      <textarea name="chatInput form-control" rows="50" class="chatInput"></textarea>
-      <button class="btn btn-xs sendButton">
-        send
-      </button>
-    </div>
-    <div class="chatButton text-center" (click)="showBody()">
-      <span *ngIf="!showTextBody && notiNum>0" class="fa-stack fa-1x noBodyBadge" style="color:	#d9534f">
+      <div class="chatButton text-center" (click)="showBody(eachChat)">
+      <span *ngIf="!eachChat.showTextBody && eachChat.new_message_num>0" class="fa-stack fa-1x noBodyBadge" style="color:	#d9534f">
         <i class="fa fa-comment fa-stack-2x"></i>
-        <strong class="fa-stack calendar-text" style="color:white">{{ notiNum }}</strong>
+        <strong class="fa-stack calendar-text" style="color:white">{{ eachChat.new_message_num }}</strong>
       </span>
-      {{ chatWith }}
-      <span class="label label-default label-as-badge closeAllChat" style="color:rgba(69,73,84,1)" (click)="closeCurrentChat()"><i class="fa fa-times"></i></span>
+        {{ eachChat.name }}
+        <span class="label label-default label-as-badge closeAllChat" style="color:rgba(69,73,84,1)" (click)="closeCurrentChat(eachChat)"><i class="fa fa-times"></i></span>
+      </div>
     </div>
   </div>
 </div>
+

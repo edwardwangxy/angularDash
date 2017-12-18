@@ -27,6 +27,8 @@ import { JoinclassComponent } from './dashboardApp/joinclass/joinclass.component
 import { AddclassComponent } from './dashboardApp/addclass/addclass.component';
 import { ClassComponent } from './dashboardApp/class/class.component';
 import { LoginDetactionComponent } from './login-detaction/login-detaction.component';
+import {AnimatorModule} from "css-animator";
+import {DataService} from './services/data.service';
 
 
 @NgModule({
@@ -54,6 +56,7 @@ import { LoginDetactionComponent } from './login-detaction/login-detaction.compo
   imports: [
     BrowserModule,
     FormsModule,
+    AnimatorModule,
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot([
@@ -102,6 +105,7 @@ import { LoginDetactionComponent } from './login-detaction/login-detaction.compo
   ],
   providers: [
       AuthService,
+      DataService,
       SelfDefinedValidators,
       JwtHelper
   ],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-livechat',
@@ -7,25 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LivechatComponent implements OnInit {
 
-  chatWith = "Student1";
-  showTextBody = false;
-  notiNum = 3;
-  currentChat = true;
+  currentChatList;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.data.chatList.subscribe(list => this.currentChatList = list);
   }
 
-  showBody(){
-    this.showTextBody=!this.showTextBody;
-    this.notiNum = 0;
+  showBody(currentChat) {
+    currentChat.showTextBody = !currentChat.showTextBody;
+    currentChat.new_message_num = 0;
   }
 
-  closeTextBody(){
-    this.showTextBody = false;
+  closeTextBody(currentChat){
+    currentChat.showTextBody = false;
   }
-  closeCurrentChat(){
-    this.currentChat = false;
+  closeCurrentChat(currentChat){
+    currentChat.currentChat = false;
   }
 }
