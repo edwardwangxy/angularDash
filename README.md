@@ -1,6 +1,9 @@
 ## Demo Page:
 [http://uiux.uwwxy.com](http://uiux.uwwxy.com)
 
+## Note:
+No animation included in this project yet. No actual data passing from or to the backend. All the forms will be submitted successfully when all the fields requirements are fullfilled.
+
 ## Fake Backend Using: 
 [https://www.mockable.io/](https://www.mockable.io/)
 
